@@ -1,0 +1,151 @@
+/* Tianxiang (Jimmy) Liu — personal site */
+
+* { box-sizing: border-box; }
+
+:root {
+  --ink: #1b1b1b;
+  --muted: #6b6b6b;
+  --line: #e4e4e0;
+  --accent: #2b5d8c;
+  --shade: #f5f4f0;
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: #1d3f60; }
+
+/* Header: name on top, in-page navigation under it */
+header {
+  text-align: center;
+  padding: 44px 20px 24px;
+  border-bottom: 1px solid var(--line);
+}
+.name {
+  font-family: var(--serif);
+  font-size: 30px;
+  color: var(--ink);
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 20px;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 0 2px 14px;
+  border-bottom: 2px solid transparent;
+}
+nav a:hover { color: var(--ink); }
+nav a[aria-current] { color: var(--ink); border-color: var(--accent); }
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 72px;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.25;
+}
+h1 { font-size: 28px; margin: 0 0 18px; }
+h2 { font-size: 24px; margin: 0 0 16px; }
+h3 { font-size: 20px; margin: 28px 0 12px; }
+p { margin: 0 0 16px; }
+ul, ol { margin: 0 0 16px; padding-left: 26px; }
+li { margin: 4px 0; }
+
+/* Home page sections */
+section {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 16px;
+}
+section:last-of-type { border-bottom: 0; }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 15px;
+  margin: 0;
+}
+.links a { text-decoration: none; border-bottom: 1px solid #b7c6d4; }
+.links a:hover { border-color: var(--accent); }
+
+.entry-title { font-family: var(--serif); font-size: 20px; margin: 0 0 8px; }
+.entry-title a { color: var(--ink); text-decoration: none; }
+.entry-title a:hover { text-decoration: underline; }
+.entry-note { color: var(--muted); font-size: 15px; margin: 0; }
+
+/* Blog post page */
+.post h1 { font-size: 34px; letter-spacing: -0.3px; margin-bottom: 10px; }
+.post-meta { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+.post-body { margin-top: 28px; }
+.post-body h2 { font-size: 26px; margin: 44px 0 16px; }
+.post-body h3 { font-size: 20px; margin: 30px 0 12px; }
+
+.post-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--shade);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+.post-body blockquote {
+  margin: 0 0 18px;
+  padding: 2px 18px;
+  border-left: 3px solid #cfcfc8;
+  color: #333;
+}
+.post-body figure { margin: 26px 0; }
+.post-body figure img { display: block; width: 100%; height: auto; }
+.post-body figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+.table-wrap { overflow-x: auto; margin: 0 0 20px; }
+table { border-collapse: collapse; font-size: 14px; line-height: 1.45; min-width: 100%; }
+th, td { text-align: left; vertical-align: top; padding: 6px 10px; border-bottom: 1px solid var(--line); }
+th { border-bottom: 2px solid #cfcfc8; font-weight: 600; }
+td.nw { white-space: nowrap; }
+th:first-child, td:first-child { min-width: 8em; }
+
+/* Passages written by an LLM, marked in the source */
+.llm-output {
+  background: var(--shade);
+  border-left: 3px solid #cfc8b4;
+  padding: 12px 16px 4px;
+  margin: 0 0 20px;
+}
+.llm-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.llm-output p:last-child { margin-bottom: 8px; }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  header { padding-top: 28px; }
+  .name { font-size: 26px; }
+  nav { gap: 24px; }
+  main { padding: 16px 16px 48px; }
+  h1 { font-size: 25px; }
+  .post h1 { font-size: 27px; }
+  .post-body h2 { font-size: 23px; }
+}
