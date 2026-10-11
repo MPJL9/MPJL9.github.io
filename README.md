@@ -35,7 +35,7 @@ Edit the Markdown source, then rebuild the page:
 python3 tools/build_post.py
 ```
 
-The script reads `blog_post_published.md` from the J-lens project folder (path at the top of the script), turns the `%%% llm-output` markers into labelled boxes, and points the figures at `blog/assets/`. If a figure changes, copy the new PNG into `blog/assets/` as well. The script needs the `mistune` Python package, which is already installed.
+The script reads `blog_post_published.md` from the J-lens project folder (path at the top of the script), turns the `%%% llm-output` markers into labelled boxes, gives every heading an id and builds the table of contents from them, folds the appendix tables behind "Show table" toggles (the two tables in Appendix C are named in `FOLD_LABELS` at the top of the script), and points the figures at `blog/assets/`. If a figure changes, copy the new PNG into `blog/assets/` as well. The script needs the `mistune` Python package, which is already installed.
 
 ## Links to add later
 
