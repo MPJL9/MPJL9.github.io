@@ -138,7 +138,7 @@ SCRIPT = """<script>
 (function () {
   var toc = document.querySelector('.toc');
   var box = toc.querySelector('details');
-  var narrow = window.matchMedia('(max-width: 1039px)');
+  var narrow = window.matchMedia('(max-width: 919px)');  // one below the sidebar breakpoint in style.css
   if (narrow.matches) box.removeAttribute('open');
   var links = [].slice.call(toc.querySelectorAll('a[href^="#"]'));
   var heads = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
@@ -172,7 +172,7 @@ page = f"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — Tianxiang (Jimmy) Liu</title>
 <meta name="description" content="Some findings on the template tokens of Qwen 3.6 27B using Jacobian Lens.">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=2">
 </head>
 <body>
 <header>
