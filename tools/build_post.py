@@ -179,6 +179,9 @@ page = f"""<!doctype html>
 <a class="name" href="../index.html">Tianxiang (Jimmy) Liu</a>
 </header>
 <main class="post">
+<article>
+<h1>{title}</h1>
+<p class="post-meta">October 2026</p>
 <nav class="toc" aria-label="Contents">
 <details class="toc-box" open>
 <summary>Contents</summary>
@@ -187,9 +190,6 @@ page = f"""<!doctype html>
 </ol>
 </details>
 </nav>
-<article>
-<h1>{title}</h1>
-<p class="post-meta">October 2026</p>
 <div class="post-body">
 {body}
 </div>

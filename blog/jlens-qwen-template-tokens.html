@@ -12,6 +12,9 @@
 <a class="name" href="../index.html">Tianxiang (Jimmy) Liu</a>
 </header>
 <main class="post">
+<article>
+<h1>On Qwen, the J-lens readouts at the newline token reveal lies</h1>
+<p class="post-meta">October 2026</p>
 <nav class="toc" aria-label="Contents">
 <details class="toc-box" open>
 <summary>Contents</summary>
@@ -66,9 +69,6 @@
 </ol>
 </details>
 </nav>
-<article>
-<h1>On Qwen, the J-lens readouts at the newline token reveal lies</h1>
-<p class="post-meta">October 2026</p>
 <div class="post-body">
 <h2 id="tl-dr">1. TL;DR</h2>
 <p>We put four models (Qwen3.6-27B, two Gemma-3 models, gpt-oss-20b) in MASK's pressure scenarios, where a system prompt gives the model a role and a reason to lie about a fact it was told. We read the residual stream at the chat-template tokens with the J-lens. Then we grouped the readout words by their meaning into families and counted how often each family appears after lies and after truths.</p>

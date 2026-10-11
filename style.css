@@ -151,8 +151,8 @@ th:first-child, td:first-child { min-width: 8em; }
 }
 
 /* Table of contents: a sticky column to the left of the post on wide screens,
-   a collapsed box above the post on narrow ones */
-.toc { font-size: 14px; line-height: 1.4; margin: 0 0 28px; }
+   a collapsed box between the date and the text on narrow ones */
+.toc { font-size: 14px; line-height: 1.4; margin: 20px 0 0; }
 .toc-box {
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -189,14 +189,23 @@ th:first-child, td:first-child { min-width: 8em; }
 @media (min-width: 920px) {
   main.post {
     max-width: none;
-    display: grid;
-    grid-template-columns: minmax(236px, 1fr) minmax(0, 680px) minmax(0, 1fr);
     padding-left: 24px;
     padding-right: 24px;
   }
-  .post article { grid-column: 2; min-width: 0; }
-  .toc {
+  /* Title, date and text stack in the middle column; the contents span
+     every row of the left column so they can stick while the text scrolls. */
+  .post article {
+    display: grid;
+    grid-template-columns: minmax(236px, 1fr) minmax(0, 680px) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr;
+  }
+  .post article > * { grid-column: 2; min-width: 0; }
+  /* Grid items do not collapse margins, so keep the date-to-text gap as before. */
+  .post article > .post-meta { margin-bottom: 0; }
+  .post-body > h2:first-child { margin-top: 16px; }
+  .post article > .toc {
     grid-column: 1;
+    grid-row: 1 / -1;
     justify-self: end;
     align-self: start;
     position: sticky;
